@@ -109,3 +109,27 @@ async function loadMarketOverview() {
 
 loadMarketOverview();
 setInterval(loadMarketOverview, 60000); // Auto-refresh every 1 minute
+
+
+// Animate feature cards on scroll using IntersectionObserver
+document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".why-card");
+  
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            entry.target.style.animation = `slideFadeUp 0.8s ease forwards`;
+            entry.target.style.animationDelay = `${index * 0.2}s`;
+            observer.unobserve(entry.target); // Animate only once
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+  
+    cards.forEach(card => {
+      observer.observe(card);
+    });
+  });
+  

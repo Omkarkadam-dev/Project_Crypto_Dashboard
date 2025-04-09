@@ -484,4 +484,96 @@ html {
   .market-change.down {
     color: var(--red);
   }
+
+  
+  /* ================================
+   ⚡ Why Use Our Dashboard Section
+================================== */
+.why-dashboard {
+    background: linear-gradient(145deg, #0f0c29, #302b63, #24243e);
+    padding: 5rem 2rem;
+    color: white;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  .section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #00e6e6;
+    text-shadow: 0 0 15px rgba(0, 230, 230, 0.5);
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .why-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 2rem;
+    backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 230, 230, 0.05);
+    animation: slideFadeUp 0.8s ease forwards;
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  
+  .why-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 0 25px rgba(0, 230, 230, 0.15);
+  }
+  
+  .why-card i.icon {
+    font-size: 2.5rem;
+    color: #00e6e6;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(0, 230, 230, 0.6);
+    transition: transform 0.4s ease;
+  }
+  
+  .why-card:hover .icon {
+    transform: rotate(6deg) scale(1.1);
+  }
+  
+  .why-card h3 {
+    font-size: 1.4rem;
+    margin: 0.8rem 0;
+    color: #ffffff;
+  }
+  
+  .why-card p {
+    font-size: 0.95rem;
+    color: #cccccc;
+    line-height: 1.6;
+  }
+  
+  @keyframes slideFadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .why-card.animate {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  .why-card {
+    opacity: 0;
+    transform: translateY(40px);
+  }
   
