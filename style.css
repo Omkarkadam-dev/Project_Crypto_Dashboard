@@ -379,3 +379,109 @@ html {
     height: 20px;
     object-fit: contain;
 }
+
+
+:root {
+    --green: #00ffcc;
+    --red: #ff6666;
+    --bg-dark: #0d0d0d;
+    --glow: rgba(0, 230, 230, 0.3);
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #0a0a0a;
+    color: white;
+  }
+  
+  /* ================================
+     🌍 Market Overview
+  ================================== */
+  .market-section {
+    background: var(--bg-dark);
+    padding: 4rem 2rem;
+    color: white;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .section-heading {
+    font-size: 2.5rem;
+    text-align: center;
+    color: var(--green);
+    margin-bottom: 3rem;
+    text-shadow: 0 0 10px var(--glow);
+  }
+  
+  .market-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+  }
+  
+  .market-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 1.8rem;
+    backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 230, 230, 0.05);
+    animation: fadeUp 0.8s ease forwards;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .market-card:hover {
+    border: 1px solid var(--glow);
+    transform: scale(1.02);
+    box-shadow: 0 0 30px var(--glow);
+  }
+  
+  .market-card img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+  }
+  
+  .market-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .market-symbol {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .market-price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--green);
+  }
+  
+  .market-change {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .market-change.up {
+    color: var(--green);
+  }
+  
+  .market-change.down {
+    color: var(--red);
+  }
+  

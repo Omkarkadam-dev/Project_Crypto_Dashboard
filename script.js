@@ -67,3 +67,45 @@ loadTickerData();
 
 // Optional: Auto-refresh every 1 minute
 setInterval(loadTickerData, 60000);
+
+
+
+async function loadMarketOverview() {
+  try {
+    const res = await fetch(API_URL);
+    const data = await res.json();
+
+    const grid = document.getElementById('marketGrid');
+    grid.innerHTML = '';
+
+    data.forEach((coin, i) => {
+      const isUp = coin.price_change_percentage_24h >= 0;
+      const changeClass = isUp ? 'up' : 'down';
+      const arrow = isUp ? '▲' : '▼';
+
+      const card = document.createElement('div');
+      card.className = 'market-card';
+      card.style.animationDelay = `${i * 0.2}s`;
+
+      card.innerHTML = `
+        <div class="market-info">
+          <img src="${coin.image}" alt="${coin.name}" />
+          <div>
+            <div class="market-symbol">${coin.name} (${coin.symbol.toUpperCase()})</div>
+            <div class="market-price">$${coin.current_price.toFixed(2)}</div>
+          </div>
+        </div>
+        <div class="market-change ${changeClass}">
+          ${arrow} ${coin.price_change_percentage_24h.toFixed(2)}%
+        </div>
+      `;
+
+      grid.appendChild(card);
+    });
+  } catch (err) {
+    console.error('Error fetching market data:', err);
+  }
+}
+
+loadMarketOverview();
+setInterval(loadMarketOverview, 60000); // Auto-refresh every 1 minute
