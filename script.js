@@ -31,3 +31,39 @@ featureCards.forEach(card => {
   card.style.transform = "translateY(50px)";
   observer.observe(card);
 });
+
+
+const API_URL = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=15&page=1&sparkline=false';
+
+async function loadTickerData() {
+  try {
+    const res = await fetch(API_URL);
+    const data = await res.json();
+
+    const container = document.getElementById('tickerContainer');
+    container.innerHTML = ''; // Clear old data
+
+    data.forEach(coin => {
+      const priceChange = coin.price_change_percentage_24h;
+      const trendClass = priceChange >= 0 ? 'price-up' : 'price-down';
+
+      const item = document.createElement('div');
+      item.className = 'ticker-item';
+      item.innerHTML = `
+        <img src="${coin.image}" alt="${coin.name}">
+        <span>${coin.symbol.toUpperCase()}</span>
+        <span class="${trendClass}">$${coin.current_price.toFixed(2)}</span>
+      `;
+
+      container.appendChild(item);
+    });
+  } catch (err) {
+    console.error('Failed to fetch crypto data:', err);
+  }
+}
+
+// Load on page load
+loadTickerData();
+
+// Optional: Auto-refresh every 1 minute
+setInterval(loadTickerData, 60000);

@@ -10,28 +10,29 @@
     --glass-border: rgba(255, 255, 255, 0.1);
     --text-light: #e0e0e0;
     --font: 'Poppins', sans-serif;
-  }
-  
-  * {
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-  }
-  
-  body, html {
+}
+
+body,
+html {
     height: 100%;
     font-family: var(--font);
     background-color: var(--bg);
     overflow-x: hidden;
     color: white;
     transition: all 0.3s ease;
-  }
-  
-  /* ================================
+}
+
+/* ================================
      🚀 Hero Section
   ================================== */
-  .hero {
+.hero {
     position: relative;
     height: 100vh;
     background: var(--bg-gradient);
@@ -40,51 +41,51 @@
     justify-content: space-between;
     padding: 2rem;
     overflow: hidden;
-  }
-  
-  .overlay {
+}
+
+.overlay {
     position: absolute;
     inset: 0;
     background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05), transparent 70%);
     z-index: 1;
-  }
-  
-  /* ================================
+}
+
+/* ================================
      📌 Navbar
   ================================== */
-  .navbar {
+.navbar {
     position: relative;
     z-index: 2;
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-  
-  .navbar .logo {
+}
+
+.navbar .logo {
     width: 50px;
     height: auto;
     transition: transform 0.3s ease;
-  }
-  
-  .navbar .logo:hover {
+}
+
+.navbar .logo:hover {
     transform: rotate(5deg) scale(1.05);
-  }
-  
-  .navbar ul {
+}
+
+.navbar ul {
     display: flex;
     gap: 2rem;
     list-style: none;
-  }
-  
-  .navbar a {
+}
+
+.navbar a {
     color: var(--text-light);
     text-decoration: none;
     font-weight: 500;
     position: relative;
     transition: color 0.3s;
-  }
-  
-  .navbar a::after {
+}
+
+.navbar a::after {
     content: "";
     position: absolute;
     width: 0;
@@ -93,20 +94,20 @@
     bottom: -4px;
     left: 0;
     transition: width 0.3s;
-  }
-  
-  .navbar a:hover::after {
+}
+
+.navbar a:hover::after {
     width: 100%;
-  }
-  
-  .navbar a:hover {
+}
+
+.navbar a:hover {
     color: var(--primary);
-  }
-  
-  /* ================================
+}
+
+/* ================================
      ✨ Hero Content
   ================================== */
-  .hero-content {
+.hero-content {
     position: relative;
     z-index: 2;
     margin-top: 5rem;
@@ -114,16 +115,16 @@
     animation: fadeUp 1s ease-out forwards;
     opacity: 0;
     transform: translateY(40px);
-  }
-  
-  @keyframes fadeUp {
+}
+
+@keyframes fadeUp {
     to {
-      opacity: 1;
-      transform: translateY(0);
+        opacity: 1;
+        transform: translateY(0);
     }
-  }
-  
-  .typing-text {
+}
+
+.typing-text {
     font-size: 3rem;
     font-weight: 700;
     min-height: 80px;
@@ -131,15 +132,15 @@
     overflow: hidden;
     border-right: 3px solid var(--primary);
     animation: blink 0.7s infinite step-end;
-  }
-  
-  @keyframes blink {
+}
+
+@keyframes blink {
     50% {
-      border-color: transparent;
+        border-color: transparent;
     }
-  }
-  
-  .tagline {
+}
+
+.tagline {
     font-size: 1.2rem;
     margin: 1.5rem 0;
     padding: 1.2rem;
@@ -148,13 +149,13 @@
     border: 1px solid var(--glass-border);
     backdrop-filter: blur(14px);
     color: #dcdcdc;
-    box-shadow: inset 0 0 10px rgba(255,255,255,0.03);
-  }
-  
-  /* ================================
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.03);
+}
+
+/* ================================
      🎯 Call-to-Action Button
   ================================== */
-  .cta {
+.cta {
     padding: 0.9rem 2.2rem;
     font-size: 1rem;
     font-weight: 600;
@@ -165,34 +166,34 @@
     cursor: pointer;
     transition: all 0.35s ease;
     box-shadow: 0 6px 12px rgba(0, 230, 230, 0.25);
-  }
-  
-  .cta:hover {
+}
+
+.cta:hover {
     background: var(--primary-dark);
     transform: translateY(-4px) scale(1.03);
     box-shadow: 0 10px 20px rgba(0, 230, 230, 0.35);
-  }
-  
-  /* ================================
+}
+
+/* ================================
      📱 Responsive Design
   ================================== */
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     .typing-text {
-      font-size: 2rem;
+        font-size: 2rem;
     }
-  
-    .navbar ul {
-      gap: 1rem;
-    }
-  
-    .hero-content {
-      margin-top: 3rem;
-    }
-  }
-  
 
-  
- /* ================================
+    .navbar ul {
+        gap: 1rem;
+    }
+
+    .hero-content {
+        margin-top: 3rem;
+    }
+}
+
+
+
+/* ================================
    🧩 Key Features Section
 ================================== */
 .features-section {
@@ -203,9 +204,9 @@
     position: relative;
     overflow: hidden;
     z-index: 1;
-  }
-  
-  .features-section::before {
+}
+
+.features-section::before {
     content: "";
     position: absolute;
     width: 500px;
@@ -215,9 +216,9 @@
     right: -100px;
     z-index: 0;
     filter: blur(80px);
-  }
-  
-  .section-title {
+}
+
+.section-title {
     font-size: 2.8rem;
     margin-bottom: 3rem;
     font-weight: 800;
@@ -226,21 +227,21 @@
     z-index: 2;
     letter-spacing: 1px;
     text-shadow: 0 0 10px rgba(0, 230, 230, 0.3);
-  }
-  
-  .features-container {
+}
+
+.features-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     justify-content: center;
     position: relative;
     z-index: 2;
-  }
-  
-  /* ================================
+}
+
+/* ================================
      📦 Feature Card
   ================================== */
-  .feature-card {
+.feature-card {
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 20px;
@@ -252,65 +253,129 @@
     transform: translateY(20px);
     opacity: 0;
     animation: fadeSlideUp 0.8s ease forwards;
-  }
-  
-  @keyframes fadeSlideUp {
+}
+
+@keyframes fadeSlideUp {
     to {
-      transform: translateY(0);
-      opacity: 1;
+        transform: translateY(0);
+        opacity: 1;
     }
-  }
-  
-  .feature-card:hover {
+}
+
+.feature-card:hover {
     transform: translateY(-10px) scale(1.03);
     box-shadow: 0 0 30px rgba(0, 230, 230, 0.2), 0 0 15px rgba(0, 230, 230, 0.1);
     border: 1px solid rgba(0, 230, 230, 0.3);
-  }
-  
-  .feature-icon {
+}
+
+.feature-icon {
     width: 64px;
     height: 64px;
     margin-bottom: 1rem;
     transition: transform 0.5s ease;
     filter: drop-shadow(0 0 6px rgba(0, 230, 230, 0.2));
-  }
-  
-  .feature-card:hover .feature-icon {
+}
+
+.feature-card:hover .feature-icon {
     transform: rotate(10deg) scale(1.1);
-  }
-  
-  .feature-card h3 {
+}
+
+.feature-card h3 {
     margin: 1rem 0 0.5rem;
     color: #00e6e6;
     font-size: 1.4rem;
     font-weight: 700;
     letter-spacing: 0.5px;
-  }
-  
-  .feature-card p {
+}
+
+.feature-card p {
     font-size: 1rem;
     color: #cfcfcf;
     line-height: 1.6;
-  }
-  
-  /* ================================
+}
+
+/* ================================
      📱 Responsive
   ================================== */
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     .section-title {
-      font-size: 2rem;
+        font-size: 2rem;
     }
-  
+
     .feature-card {
-      padding: 1.8rem 1.4rem;
+        padding: 1.8rem 1.4rem;
     }
-  
+
     .feature-card h3 {
-      font-size: 1.2rem;
+        font-size: 1.2rem;
     }
-  
+
     .feature-card p {
-      font-size: 0.95rem;
+        font-size: 0.95rem;
     }
-  }
-  
+}
+
+/* ===============================
+   💹 Live Ticker Styling
+================================= */
+.ticker-section {
+    background: rgba(255, 255, 255, 0.03);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 1rem 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.ticker-container {
+    display: flex;
+    gap: 2rem;
+    white-space: nowrap;
+    animation: tickerScroll 30s linear infinite;
+    will-change: transform;
+}
+
+@keyframes tickerScroll {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.ticker-section:hover .ticker-container {
+    animation-play-state: paused;
+}
+
+.ticker-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(0, 230, 230, 0.07);
+    border: 1px solid rgba(0, 230, 230, 0.2);
+    padding: 0.6rem 1rem;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 12px rgba(0, 230, 230, 0.06);
+    min-width: 200px;
+    transition: all 0.3s ease;
+}
+
+.price-up {
+    color: #00ffcc;
+}
+
+.price-down {
+    color: #ff6666;
+}
+
+.ticker-item img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
