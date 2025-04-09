@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   
-  // Scroll reveal for testimonials
+ // Scroll reveal for testimonials
 document.addEventListener("DOMContentLoaded", () => {
     const testimonials = document.querySelectorAll(".testimonial-card");
   
@@ -153,4 +153,6 @@ document.addEventListener("DOMContentLoaded", () => {
   
     testimonials.forEach((card) => observer.observe(card));
   });
+
   
+
