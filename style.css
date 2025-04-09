@@ -1,0 +1,113 @@
+/* Reset and basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Hero Section */
+  .hero {
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+    overflow: hidden;
+  }
+  
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(255,255,255,0.05), transparent 70%);
+    z-index: 1;
+  }
+  
+  /* Navbar */
+  .navbar {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar .logo {
+    width: 50px;
+    height: auto;
+  }
+  
+  .navbar ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .navbar a:hover {
+    color: #00e6e6;
+  }
+  
+  /* Hero Content */
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    margin-top: 5rem;
+    max-width: 700px;
+  }
+  
+  .typing-text {
+    font-size: 3rem;
+    font-weight: 700;
+    min-height: 80px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #00e6e6;
+    animation: blink 0.7s infinite step-end;
+  }
+  
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+  
+  .tagline {
+    font-size: 1.2rem;
+    margin: 1.5rem 0;
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .cta {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background: #00e6e6;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .cta:hover {
+    background: #00b3b3;
+    transform: translateY(-2px);
+  }
+  
