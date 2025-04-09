@@ -132,4 +132,25 @@ document.addEventListener("DOMContentLoaded", () => {
       observer.observe(card);
     });
   });
+
+  
+  // Scroll reveal for testimonials
+document.addEventListener("DOMContentLoaded", () => {
+    const testimonials = document.querySelectorAll(".testimonial-card");
+  
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            entry.target.style.animation = `slideFadeUp 0.8s ease forwards`;
+            entry.target.style.animationDelay = `${index * 0.2}s`;
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+  
+    testimonials.forEach((card) => observer.observe(card));
+  });
   
